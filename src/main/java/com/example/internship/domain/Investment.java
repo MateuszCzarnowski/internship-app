@@ -3,40 +3,40 @@ package com.example.internship.domain;
 import java.util.Date;
 
 public class Investment {
-    private int investmentId;
-    private Date investmentDate;
-    private double investmentValue;
+    private int id;
+    private Date date;
+    private double value;
 
-    public Investment(){};
+    public Investment(){}
 
     public Investment(int id, Date date, double value) {
-        this.investmentId = id;
-        this.investmentDate = date;
-        this.investmentValue = value;
+        this.id = id;
+        this.date = date;
+        this.value = value;
     }
 
-    public Date getInvestmentDate() {
-        return investmentDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setInvestmentDate(Date investmentDate) {
-        this.investmentDate = investmentDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public double getInvestmentValue() {
-        return investmentValue;
+    public double getValue() {
+        return value;
     }
 
-    public void setInvestmentValue(double investmentValue) {
-        this.investmentValue = investmentValue;
+    public void setValue(double value) {
+        this.value = value;
     }
 
 
-    public int getInvestmentId() {
-        return investmentId;
+    public int getId() {
+        return id;
     }
 
-    public void setInvestmentId(int investmentId) {
-        this.investmentId = investmentId;
+    public void setId(int id) {
+        this.id = id;
     }
 }

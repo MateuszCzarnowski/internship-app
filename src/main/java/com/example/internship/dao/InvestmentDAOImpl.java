@@ -1,7 +1,6 @@
 package com.example.internship.dao;
 
 import com.example.internship.domain.Investment;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -29,9 +28,9 @@ public class InvestmentDAOImpl implements InvestmentDAO {
                     DataAccessException {
                 if (rs.next()) {
                     Investment investment = new Investment();
-                    investment.setInvestmentId(rs.getInt("id"));
-                    investment.setInvestmentDate(rs.getDate("date"));
-                    investment.setInvestmentValue(rs.getDouble("value"));
+                    investment.setId(rs.getInt("id"));
+                    investment.setDate(rs.getDate("date"));
+                    investment.setValue(rs.getDouble("value"));
                     return investment;
                 }
 
