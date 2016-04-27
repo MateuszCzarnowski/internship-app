@@ -1,16 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zengel
-  Date: 4/25/16
-  Time: 4:50 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Compare</title>
 </head>
 <body>
-
+Welcome to compare page.
 </body>
 </html>
