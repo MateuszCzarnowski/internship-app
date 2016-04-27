@@ -5,6 +5,6 @@
 </head>
 <body>
 Welcome to the homepage.
-${data}
+${data.id} , ${data.date}, ${data.value}
 </body>
 </html>
