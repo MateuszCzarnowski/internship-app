@@ -4,10 +4,12 @@ import com.example.internship.domain.Investment;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class InvestmentDAOImpl implements InvestmentDAO {
 
@@ -38,6 +40,26 @@ public class InvestmentDAOImpl implements InvestmentDAO {
             }
 
         });
+    }
+
+    @Override
+    public List<Investment> getAllInvestments() {
+        String sql = "SELECT * FROM investment";
+        List<Investment> investments = jdbcTemplate.query(sql, new RowMapper<Investment>() {
+
+            @Override
+            public Investment mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Investment investment = new Investment();
+                investment.setId(rs.getInt("id"));
+                investment.setDate(rs.getDate("date"));
+                investment.setValue(rs.getDouble("value"));
+
+                return investment;
+            }
+
+        });
+
+        return investments;
     }
 
 
