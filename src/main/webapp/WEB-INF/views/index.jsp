@@ -5,26 +5,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Investments</title>
-    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" />"></script>
-    <script src="<c:url value="/resources/script.js" />"></script>
+    <script src="<c:url value="/resources/js/script.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery.canvasjs.min.js" />"></script>
 </head>
 <body>
-<div align="center">
-    <h2>Investments</h2>
-    <table border="1">
-        <th>id</th>
-        <th>Date</th>
-        <th>Value</th>
+<div id="chart">
 
-        <c:forEach var="investment" items="${investmentList}">
-            <tr>
-                <td>${investment.id}</td>
-                <td>${investment.date}</td>
-                <td>${investment.value}</td>
-            </tr>
-        </c:forEach>
-    </table>
+</div>
+<div id="data">
+
 </div>
 </body>
 </html>
