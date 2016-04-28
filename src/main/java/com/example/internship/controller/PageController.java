@@ -17,7 +17,7 @@ public class PageController {
     @RequestMapping("/")
     public ModelAndView index(ModelAndView model) {
 //        model.addObject("data", "test");
-        List<Investment> investments = investmentDAO.getAllInvestments();
+        List<Investment> investments = investmentDAO.getInvestmentsByDate("01/01/2015", "01/01/2016");
         model.addObject("investmentList", investments);
         model.setViewName("index");
 

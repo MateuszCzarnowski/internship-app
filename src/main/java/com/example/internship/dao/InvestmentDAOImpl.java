@@ -62,5 +62,25 @@ public class InvestmentDAOImpl implements InvestmentDAO {
         return investments;
     }
 
+    @Override
+    public List<Investment> getInvestmentsByDate(String date1, String date2) {
+        String sql = "SELECT * FROM investment WHERE date >= \'" + date1 + "\' AND date < \'"+ date2 + "\'";
+        List<Investment> investments = jdbcTemplate.query(sql, new RowMapper<Investment>() {
+
+            @Override
+            public Investment mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Investment investment = new Investment();
+                investment.setId(rs.getInt("id"));
+                investment.setDate(rs.getDate("date"));
+                investment.setValue(rs.getDouble("value"));
+
+                return investment;
+            }
+
+        });
+
+        return investments;
+    }
+
 
 }

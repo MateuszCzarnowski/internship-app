@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface InvestmentDAO {
 
-    public Investment getInvestment(int id);
+    Investment getInvestment(int id);
 
-    public List<Investment> getAllInvestments();
+    List<Investment> getAllInvestments();
+
+    List<Investment> getInvestmentsByDate(String date1, String date2);
 }
