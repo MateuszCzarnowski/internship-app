@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -19,13 +18,9 @@ public class PageController {
     private InvestmentDAO investmentDAO;
 
     @RequestMapping("/")
-    public ModelAndView index(ModelAndView model) {
-//        model.addObject("data", "test");
-        List<Investment> investments = investmentDAO.getInvestmentsByDate("01/01/2015", "01/01/2016");
-        model.addObject("investmentList", investments);
-        model.setViewName("index");
+    public String index() {
 
-        return model;
+        return "index";
     }
 
     @RequestMapping("/compare")
