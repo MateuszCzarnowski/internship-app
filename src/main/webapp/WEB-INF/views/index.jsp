@@ -5,6 +5,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Investments</title>
+    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
+    <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" />"></script>
+    <script src="<c:url value="/resources/script.js" />"></script>
 </head>
 <body>
 <div align="center">
