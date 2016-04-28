@@ -33,7 +33,6 @@ public class PageController {
         return "compare";
     }
 
-
     @RequestMapping(value = "/getData/{date1}/{date2}", method = RequestMethod.GET)
     @ResponseBody
     public String sendData(@PathVariable String date1, @PathVariable String date2) {
