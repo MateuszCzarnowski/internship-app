@@ -1,7 +1,6 @@
 package com.example.internship.dao;
 
 import com.example.internship.domain.Investment;
-import com.example.internship.extractors.InvestmentExtractor;
 import com.example.internship.mappers.InvestmentMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,19 +20,6 @@ public class InvestmentDAOImpl implements InvestmentDAO {
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }
-
-    public Investment getInvestment(int id) {
-        String sql = "SELECT * FROM investment WHERE id=" + id;
-        return jdbcTemplate.query(sql, new InvestmentExtractor());
-    }
-
-    @Override
-    public List<Investment> getAllInvestments() {
-        String sql = "SELECT * FROM investment";
-        List<Investment> investments = jdbcTemplate.query(sql, new InvestmentMapper());
-
-        return investments;
     }
 
     @Override
