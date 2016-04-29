@@ -1,18 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Investments</title>
+    <title>Kainos Internship App - Investment fund</title>
 
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
-    <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" />"></script>
-    <script src="<c:url value="/resources/js/jquery.canvasjs.min.js" />"></script>
-    <script src="<c:url value="/resources/js/pagination.min.js" />"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-    <script src="<c:url value="/resources/js/script.js" />"></script>
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/main.css" rel="stylesheet">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/jquery.canvasjs.min.js"></script>
+    <script src="resources/js/pagination.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/script.js"></script>
 
 </head>
 <body>
