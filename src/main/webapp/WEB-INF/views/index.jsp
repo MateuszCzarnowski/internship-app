@@ -10,7 +10,7 @@
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
     <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" />"></script>
     <script src="<c:url value="/resources/js/jquery.canvasjs.min.js" />"></script>
-    <script src="<c:url value="//paginationjs.com/dist/2.0.7/pagination.min.js" />"></script>
+    <script src="<c:url value="/resources/js/pagination.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     <script src="<c:url value="/resources/js/script.js" />"></script>
 
