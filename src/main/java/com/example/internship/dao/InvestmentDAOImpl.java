@@ -1,6 +1,8 @@
 package com.example.internship.dao;
 
 import com.example.internship.domain.Investment;
+import com.example.internship.extractors.InvestmentExtractor;
+import com.example.internship.mappers.InvestmentMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -18,68 +20,29 @@ public class InvestmentDAOImpl implements InvestmentDAO {
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
-        jdbcTemplate = new JdbcTemplate(dataSource);
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     public Investment getInvestment(int id) {
         String sql = "SELECT * FROM investment WHERE id=" + id;
-        return jdbcTemplate.query(sql, new ResultSetExtractor<Investment>() {
-
-            @Override
-            public Investment extractData(ResultSet rs) throws SQLException,
-                    DataAccessException {
-                if (rs.next()) {
-                    Investment investment = new Investment();
-                    investment.setId(rs.getInt("id"));
-                    investment.setDate(rs.getDate("date"));
-                    investment.setValue(rs.getDouble("value"));
-                    return investment;
-                }
-
-                return null;
-            }
-
-        });
+        return jdbcTemplate.query(sql, new InvestmentExtractor());
     }
 
     @Override
     public List<Investment> getAllInvestments() {
         String sql = "SELECT * FROM investment";
-        List<Investment> investments = jdbcTemplate.query(sql, new RowMapper<Investment>() {
-
-            @Override
-            public Investment mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Investment investment = new Investment();
-                investment.setId(rs.getInt("id"));
-                investment.setDate(rs.getDate("date"));
-                investment.setValue(rs.getDouble("value"));
-
-                return investment;
-            }
-
-        });
+        List<Investment> investments = jdbcTemplate.query(sql, new InvestmentMapper());
 
         return investments;
     }
 
     @Override
     public List<Investment> getInvestmentsByDate(String date1, String date2) {
-        String sql = "SELECT * FROM investment WHERE date >= \'" + date1 + "\' AND date < \'"+ date2 + "\'";
-        List<Investment> investments = jdbcTemplate.query(sql, new RowMapper<Investment>() {
-
-            @Override
-            public Investment mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Investment investment = new Investment();
-                investment.setId(rs.getInt("id"));
-                investment.setDate(rs.getDate("date"));
-                investment.setValue(rs.getDouble("value"));
-
-                return investment;
-            }
-
-        });
+        String sql = "SELECT * FROM investment WHERE date >= \'" + date1 + "\' AND date <= \'"+ date2 + "\'";
+        List<Investment> investments = jdbcTemplate.query(sql, new InvestmentMapper());
 
         return investments;
+
     }
 
 
