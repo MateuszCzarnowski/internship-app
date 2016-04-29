@@ -17,7 +17,10 @@ $(function () {
 
 
     $("#submit").click(function () {
-        if(new Date(date1.val()) < new Date(date2.val())) {
+        var dat1 = new Date(date1.val());
+        var dat2 = new Date(date2.val());
+
+        if (validateCompare(interest, amount, dat1, dat2)) {
             $("#submit").removeClass("btn-danger");
             $("#submit").addClass("btn-primary");
             getDataWithProfits(chart, date1, date2, interest, amount);
@@ -60,10 +63,13 @@ function calculateProfits(chart, amount, interest, date1, date2) {
 
     var currentDate = startDate;
     var currentAmount = parseInt(amount.val());
-    var numberOfMonths = endDate.getMonth() - startDate.getMonth() + (endDate.getFullYear() - startDate.getFullYear())*12;
+    var numberOfMonths = endDate.getMonth() - startDate.getMonth() + (endDate.getFullYear() - startDate.getFullYear()) * 12;
     for (var i = 0; i < numberOfMonths; i++) {
-        profitsList.push({x: new Date(currentDate.getFullYear(), currentDate.getMonth() + i, currentDate.getDay()), y: currentAmount});
-        currentAmount = currentAmount + (currentAmount * parseInt(interest.val()) / 100 * 1/12);
+        profitsList.push({
+            x: new Date(currentDate.getFullYear(), currentDate.getMonth() + i, currentDate.getDay()),
+            y: currentAmount
+        });
+        currentAmount = currentAmount + (currentAmount * parseInt(interest.val()) / 100 * 1 / 12);
     }
 
     chart.options.data[1].dataPoints = profitsList;

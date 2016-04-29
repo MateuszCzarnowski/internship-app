@@ -11,7 +11,10 @@ $(function () {
     getData(chart, date1, date2);
 
     $("#submit").click(function () {
-        if(new Date(date1.val()) < new Date(date2.val())) {
+        var dat1 = new Date(date1.val());
+        var dat2 = new Date(date2.val());
+
+        if(validateIndex(dat1, dat2)) {
             $("#submit").removeClass("btn-danger");
             $("#submit").addClass("btn-primary");
             getData(chart, date1, date2);

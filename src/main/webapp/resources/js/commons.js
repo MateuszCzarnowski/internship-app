@@ -51,3 +51,17 @@ function initializeChart() {
         }
     );
 }
+
+function validateCompare(interest, amount, dat1, dat2) {
+    if (!isNaN(parseFloat(interest.val())) && !isNaN(parseFloat(amount.val())) && amount.val() !== "" && interest.val() !== "" && dat1 < dat2 && dat1 > new Date("1970-01-01") && dat2 < new Date("2100-01-01")) {
+        return true;
+    } else return false;
+
+}
+
+function validateIndex(dat1, dat2) {
+    if (dat1 < dat2 && dat1 > new Date("1970-01-01") && dat2 < new Date("2100-01-01")) {
+        return true;
+    } else return false;
+
+}
