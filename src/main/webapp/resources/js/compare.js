@@ -60,7 +60,6 @@ function calculateProfits(chart, amount, interest, date1, date2) {
 
     var currentDate = startDate;
     var currentAmount = parseInt(amount.val());
-    console.log(currentDate.getFullYear());
     var numberOfMonths = endDate.getMonth() - startDate.getMonth() + (endDate.getFullYear() - startDate.getFullYear())*12;
     for (var i = 0; i < numberOfMonths; i++) {
         profitsList.push({x: new Date(currentDate.getFullYear(), currentDate.getMonth() + i, currentDate.getDay()), y: currentAmount});
@@ -68,8 +67,5 @@ function calculateProfits(chart, amount, interest, date1, date2) {
     }
 
     chart.options.data[1].dataPoints = profitsList;
-    console.log(chart.options.data[0].dataPoints);
-    console.log(chart.options.data[1].dataPoints);
-
 }
 
