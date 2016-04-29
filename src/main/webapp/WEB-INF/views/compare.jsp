@@ -35,20 +35,20 @@
     <div id="chart-container" class="row">
         <div id="chart"></div>
         <div id="date-range">
-            Date range:
-            <input id="date1">
-            -
-            <input id="date2">
-            <button id="submit" class="button">Submit</button>
+            <label for="date1">From:</label>
+            <input id="date1" class="form-control">
+            <label for="date2"> To:</label>
+            <input id="date2" class="form-control">
         </div>
         <div id="money-container">
-            Amount:
-            <input id="amount">
-            Interest rate:
-            <input id="interest-rate">
+            <label for="amount">Amount:</label>
+            <input id="amount" class="form-control">
+            <label for="interest-rate">Interest rate:</label>
+            <input class="form-control" id="interest-rate"><b>%</b>
         </div>
+        <button id="submit" class="btn btn-primary center-block">Submit</button>
     </div>
-
+    <br>
     <div id="data-container" class="row">
         <div id="data"></div>
         <div id="pagination"></div>

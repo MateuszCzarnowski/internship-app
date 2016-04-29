@@ -36,13 +36,14 @@
     <div id="chart-container" class="row">
         <div id="chart"></div>
         <div id="date-range">
-            Date range:
-            <input id="date1">
-            -
-            <input id="date2">
-            <button id="submit" class="button">Submit</button>
+            <label for="date1">From:</label>
+            <input id="date1" class="form-control">
+            <label for="date2"> To:</label>
+            <input id="date2" class="form-control">
         </div>
+        <button id="submit" class="btn btn-primary center-block">Submit</button>
     </div>
+    <br>
     <div id="data-container" class="row">
         <div id="data"></div>
         <div id="pagination"></div>
