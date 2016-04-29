@@ -11,7 +11,15 @@ $(function () {
     getData(chart, date1, date2);
 
     $("#submit").click(function () {
-        getData(chart, date1, date2);
+        if(new Date(date1.val()) < new Date(date2.val())) {
+            $("#submit").removeClass("btn-danger");
+            $("#submit").addClass("btn-primary");
+            getData(chart, date1, date2);
+        } else {
+            $("#submit").removeClass("btn-primary");
+            $("#submit").addClass("btn-danger");
+        }
+
     });
 
 });

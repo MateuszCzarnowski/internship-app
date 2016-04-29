@@ -17,7 +17,15 @@ $(function () {
 
 
     $("#submit").click(function () {
-        getDataWithProfits(chart, date1, date2, interest, amount);
+        if(new Date(date1.val()) < new Date(date2.val())) {
+            $("#submit").removeClass("btn-danger");
+            $("#submit").addClass("btn-primary");
+            getDataWithProfits(chart, date1, date2, interest, amount);
+        } else {
+            $("#submit").removeClass("btn-primary");
+            $("#submit").addClass("btn-danger");
+
+        }
     });
 
 });
